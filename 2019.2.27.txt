@@ -1,0 +1,32 @@
+192.168.113.164
+vim,emacs,nano 编辑器
+cd
+ls
+mv
+mkdir
+screen -DR 2017312271   //Ensure the program can use even you cut off the net
+
+Control + t + c     //Create to a new tag
+
+Control + t +1,2,3 change to 1,2,3tag
+
+Control + t + d     //detached(same as min the window) from screen mode
+
+Control + t + A //change name of the tag
+exit      //quit from screen mode
+man command     //see the manual, help file
+
+window\
+git，linux是/
+git init     initialize 
+git status      //tell you 1,what branch are you in. 2,what file is on track. 3,commit status
+git add filename    //track file
+git commit -a -m “an important update”    //commit a file and add your message
+git log    //See log 
+git checkout xxxxxx    //go back to the previous version
+
+2019.3.13
+subline windows的文本编辑器 
+git branch dev
+git checkout dev
+git checkout master
