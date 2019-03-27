@@ -8,13 +8,13 @@ def findroot(a,b,c):
     To find the roots of ax2+bx+c=0.
     """
     from math import sqrt
-    derta = b**2-4*a*c
-    if derta > 0:
-        x1 = -(b + sqrt(derta))/(2*a)
-        x2 = -(b - sqrt(derta))/(2*a)
+    delta = b**2-4*a*c
+    if delta > 0:
+        x1 = -(b + sqrt(delta))/(2*a)
+        x2 = -(b - sqrt(delta))/(2*a)
         print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the roots are"+repr(x1)+","+repr(x2)+".")
-    elif derta == 0:
-        x1 = -(b + sqrt(derta))/(2*a)
+    elif delta == 0:
+        x1 = -(b + sqrt(delta))/(2*a)
         print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the roots are same："+repr(x1)+".")
     else:
         print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the equation doesn't have real root.")
