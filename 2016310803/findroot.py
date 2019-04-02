@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 """
-Spyder Editor
+Created on Tue Apr  2 19:50:57 2019
 
-This is a temporary script file.
+@author: think
 """
 
 import math
@@ -26,6 +26,4 @@ def findroot(a, b, c):
         else:
             x1 = (-b+math.sqrt(delta))/(2*a)
             x2 = (-b-math.sqrt(delta))/(2*a)
-            print("一个解为"+repr(x1)+'另一个为'+repr(x2))
-findroot(1, 6, 5)
-        
+            print("一个解为"+repr(x1)+',另一个为'+repr(x2))
