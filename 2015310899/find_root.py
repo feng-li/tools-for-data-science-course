@@ -5,7 +5,7 @@
 
 def find_root(a,b,c):
     """
-    To find the roots of ax2+bx+c=0.
+    To find the roots of ax^2+bx+c=0.
     """
     if (isinstance(a,(int,float)) and isinstance(b,(int,float)) and isinstance(c,(int,float)) and a!= 0):
 	from math import sqrt
@@ -15,7 +15,7 @@ def find_root(a,b,c):
 		x2 = -(b - sqrt(delta))/(2*a)
 		print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the roots are"+repr(x1)+","+repr(x2)+".")
 	elif delta == 0:
-		x1 = -(b + sqrt(delta))/(2*a)
+		x1 = -b/(2*a)
 		print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the roots are same："+repr(x1)+".")
 	else:
 		print("If a="+repr(a)+",b="+repr(b)+",c="+repr(c)+",the equation doesn't have real root.")
