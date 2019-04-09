@@ -1,10 +1,1 @@
-# tds19
-
-Demo repo for `Tools for Data Science`
-
-- Classroom: 105M, Shahe Campus
-
-- Time: Every Wednesday 19:20 pm
-
-- Course hompage
-  https://feng.li/teaching/tds/
+牟家辰_2017310855_L2
