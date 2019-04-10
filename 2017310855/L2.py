@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 def F_Root(a, b, c):
     """
     Judge the root of a random quadric equation in one variable.
