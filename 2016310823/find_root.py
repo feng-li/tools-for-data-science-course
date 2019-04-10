@@ -23,15 +23,6 @@ A = range(2,12)
 B = np.random.randint(15,size=10)
 C = np.random.randint(15,size=10)
 
-if [[not str(X[i]).isnumeric() for i in range(len(X))] for X in [A,B,C]]:
-    print('y')
-else:
-    print('n')
-
-def find_roots(A,B,C):
-    
-
 for i in range(len(A)):
     find_root(A[i],B[i],C[i])
 
-['A[i]'.isnumeric() for i in range(len(A))]
