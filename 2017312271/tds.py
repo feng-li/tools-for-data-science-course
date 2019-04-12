@@ -1,6 +1,6 @@
 import numpy
 import scipy
-import scipy.linalg
+from scipy import linalg
 import scipy.optimize
 import matplotlib
 import pandas
@@ -12,11 +12,12 @@ starts_with_hash = 0
 with open("hash file.txt", 'r') as file:
     for line in file:
         if re.match("#", line):
-            starts_with_hash +=1
+            starts_with_hash += 1
 
 print(starts_with_hash)
 
-# pandas.read_csv()
+# csv = pandas.read_csv("", header = None)
+# csv.value.shape
 # pandas.read_clipboard()
 # pandas.read_pickle()
 
@@ -25,3 +26,5 @@ ziphash = myzip.open("hash file.txt", 'r')
 for line in ziphash:
     print(line)
 print(myzip.namelist())
+
+
