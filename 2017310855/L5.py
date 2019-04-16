@@ -1,3 +1,4 @@
+#! /usr/bin/env python3
 #pip install numpy
 #pip install scipy
 from numpy import array
