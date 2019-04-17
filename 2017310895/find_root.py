@@ -14,5 +14,6 @@ B=[r.random() for _ in range(10)]
 C=[r.random() for _ in range(10)]
 for i in range(10):
     find_root(A[i],B[i],C[i])
+#考虑输入的维度不同，数字类型，a=0
 
     
