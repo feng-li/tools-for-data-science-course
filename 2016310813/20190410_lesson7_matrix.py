@@ -101,3 +101,53 @@ np.linalg.det(mat1)                           # (3)求出矩阵mat1的行列式
 
 # ————————————————————————————————————————
 
+
+# In[47]:
+
+# 性质5：如果行列式中有两行成比例，那么行列式为0
+
+# 思路：
+# (1)随机生成一个n*n的矩阵mat
+# (2)随机生成一组随机数c1，并得到c1的倍数c2，令c2为c1的m倍
+# (3)将这两组数分别代入矩阵mat中某两行，得到新矩阵mat1
+# (4)判断新矩阵mat1的行列式是否等于0
+
+n = 5                                      # (1)n决定矩阵是n行n列的
+t = [random.randint(0,10) for _ in range(n**2)];mat = np.matrix(t).reshape(n,n)   # 随机生成一个n行n列的矩阵
+c1=[random.uniform(0,1) for _ in range(n)]           # (2)随机生成一组[0,1]的均匀分布的随机数随机数                  
+m=random.randrange(1, 20)                     # 随机抽取倍数m
+c2=[i*m for i in c1]                          # 得到第二组数c2
+r=[random.randrange(1, n) for _ in range(2)]             # 随机生成两个数a,b
+a=r[0]
+b=r[1]
+mat[a,:]=c1                          # 让第a行的元素为c1
+mat[b,:]=c2                          # 让第b行的元素为c2
+mat1=mat                            # 得到新矩阵mat1
+np.linalg.det(mat1)                           # (3)求出矩阵mat1的行列式，判断是否为0
+# 验算多次结果为0，验证得到性质5正确
+
+
+# In[65]:
+
+# 性质6：把一行的倍数加到另一行，行列式不变
+
+# 思路：
+# (1)随机生成一个n*n的矩阵mat1
+# (2)随机取第a行，让第b行加上a行的m倍，得到新的矩阵mat2
+# (3)判断两个矩阵的行列式之差是否为0
+
+n = 5                                      # (1)n决定矩阵是n行n列的
+t = [random.randint(0,10) for _ in range(n**2)];mat = np.matrix(t).reshape(n,n)   # 随机生成一个n行n列的矩阵
+mat1=mat                            # 生成的矩阵记为mat1
+m=random.randrange(1, 20)                     # 随机抽取倍数m
+r=[random.randrange(1, n) for _ in range(2)]             # 随机生成两个数a,b
+a=r[0]
+b=r[1]
+c1=mat[a,:]                          # 取出矩阵第a行的元素
+k = [];                              # 让第b行的元素加上第a行元素的m倍
+for i,j in zip([i*m for i in c1],mat[b,:]):
+    k.append(i+j)
+mat[b,:] = k
+mat2=mat                            # 得到新矩阵mat2
+np.linalg.det(mat1)-np.linalg.det(mat2)                 # (3)求出矩阵mat1和mat2的行列式之差，判断是否为0
+
