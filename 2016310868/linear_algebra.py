@@ -6,7 +6,7 @@ Created on Wed Apr 17 16:28:30 2019
 """
 
 from numpy import *
-from scipy import *
+from scipy import * # 有问题：numpy和scipy中都有linalg，但“结果”不同，这种方法不合适
 
 M1 = array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 
