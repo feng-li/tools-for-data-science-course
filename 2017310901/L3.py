@@ -21,7 +21,7 @@ E=identity(3).toarray()  #E是三阶单位阵
 print(linalg.norm(X,5)>linalg.norm(X,6)>linalg.norm(X,50))
 
 # 2验证矩阵范数的相容性
-print(linalg.norm(A.dot(B),2)<=linalg.norm(A,1)*linalg.norm(B,2))
+print(linalg.norm(A.dot(B),2)<=linalg.norm(A,2)*linalg.norm(B,2))
 
 # 3证明列选主元LU分解的L矩阵元素<=1,U对角线非零元的个数等于A的秩
 P,L,U=linalg.lu(A)
