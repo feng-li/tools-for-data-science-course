@@ -31,18 +31,8 @@ print(U)
 print(np.linalg.matrix_rank(A))
 
 # 4验证矩阵的逆的定义
-print((C.dot(linalg.inv(C))==E).all())
-print(C.dot(linalg.inv(C)))
+print(np.allclose(C.dot(linalg.inv(C)),E))
 
-# 5验证(CD)^-1=C^-1*D^-1
+# 5验证(CD)^-1=D^-1*C^-1
 print(linalg.inv(C.dot(D)))
 print(linalg.inv(D).dot(linalg.inv(C)))
-
-
-# In[20]:
-
-
-import random as r
-B=np.array([[r.randint(0,9) for i in range(3)],[r.randint(0,9) for i in range(3)],[r.randint(0,9) for i in range(3)]])
-B
-

@@ -2,14 +2,12 @@ def qua():
     """
     find the roots of a random equation
     """
-
     import math
     import random
     a = random.randint(1,100)
     b = random.randint(-100,100)
     c = random.randint(-100,100)
     print("a=",a,"b=",b,"c=",c) #生成随机数a,b,c
-    
     delta= b**2 - 4*a*c
     if a == 0:
         print("方程不是一元二次方程")
