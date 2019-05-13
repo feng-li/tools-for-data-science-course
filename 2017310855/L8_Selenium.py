@@ -1,3 +1,4 @@
+# !/usr/bin/env python
 # sudo pip3 install selenium
 from selenium import webdriver
 d = webdriver.Safari()
