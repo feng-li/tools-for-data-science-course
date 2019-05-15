@@ -25,4 +25,8 @@ def qua():
         else:
             x1 = (-b + math.sqrt(delta))/(2*a)
             x2 = (-b - math.sqrt(delta))/(2*a)
+
             print("方程有两个不同根，分别为x1=",x1,"x2=",x2)
+
+            print("方程有两个不同根，分别为x1=",x1,"x2=",x2)
+
