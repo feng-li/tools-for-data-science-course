@@ -8,9 +8,11 @@ Created on Wed May 22 20:49:04 2019
 from scipy import stats
 import numpy as np
 import time
+import matplotlib.pyplot as plt
 
 ### mean_time
 
+# 1 2
 time1 = np.array([])
 time2 = np.array([])
 for i in range(100):
@@ -34,9 +36,12 @@ for i in range(100):
 np.mean(time1)
 np.mean(time2)
 
+plt.hist(time1)
+plt.hist(time2)
+
 stats.ttest_ind(time1,time2)
 
-
+# 3 4
 time3 = np.array([])
 time4 = np.array([])
 for i in range(100):
@@ -60,6 +65,9 @@ for i in range(100):
 
 np.mean(time3)
 np.mean(time4)
+
+plt.hist(time3)
+plt.hist(time4)
 
 stats.ttest_ind(time3,time4)
 
