@@ -9,6 +9,7 @@ from scipy import stats
 import numpy as np
 import time
 
+### mean_time
 
 time1 = np.array([])
 time2 = np.array([])
@@ -61,3 +62,20 @@ np.mean(time3)
 np.mean(time4)
 
 stats.ttest_ind(time3,time4)
+
+
+### map_var
+
+n = 10
+rnorm = np.random.normal(0,1,100000)
+rnorm_mat = rnorm.reshape(n,10000)
+np.var(rnorm)
+
+# map
+varn = np.var(rnorm_mat,axis=1)
+meann = np.mean(rnorm_mat,axis=1)
+# reduce
+mean1 = np.mean(np.mean(rnorm_mat,axis=1))
+var = varn + (mean1-meann)**2
+np.sum(var)/n
+
