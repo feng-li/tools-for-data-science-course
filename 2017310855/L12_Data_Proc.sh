@@ -22,19 +22,19 @@ emacs -Q data_proc.py
 import sys
 import io
 
-input_stream = io.TextIOWrapper(sys.stdin.buffer, encoding = 'gbk')
+input = io.TextIOWrapper(sys.stdin.buffer, encoding = 'gbk')
 
-for line in input_stream:
+for line in input:
 
     # Split
-	field = line.split(sep = ',')
+    field = line.split(sep = ',')
     
     # Process
     date = field[2]
     max = max(float(field[4]), float(field[5]), float(field[6]), float(field[7]))
     min = min(float(field[4]), float(field[5]), float(field[6]), float(field[7]))
     range = max - min
-	mean = (max + min)/2
+    mean = (max + min)/2
 
     data = (date, max, min, range, mean)
     print(data) 
