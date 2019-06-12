@@ -14,7 +14,7 @@ hadoop fs -ls /00lifeng/mujiachen
 # Switch work dic
 cd 00lifeng/mujiachen
 
-touch 00lifeng/mujiachen/data_proc.py
+touch data_proc.py
 emacs -Q data_proc.py
 
 #! /usr/bin/env python3
@@ -27,12 +27,12 @@ input = io.TextIOWrapper(sys.stdin.buffer, encoding = 'gbk')
 for line in input:
 
     # Split
-    field = line.split(sep = ',')
+    field = line.split(',')
     
     # Process
     date = field[2]
-    max = max(float(field[4]), float(field[5]), float(field[6]), float(field[7]))
-    min = min(float(field[4]), float(field[5]), float(field[6]), float(field[7]))
+    max = float(field[5])
+    min = float(field[4])
     range = max - min
     mean = (max + min)/2
 
