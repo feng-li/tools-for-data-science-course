@@ -18,5 +18,7 @@ for line in input:
     mean = (max + min)/2
 
     data = (date, str(max), str(min), str(range), str(mean))
-    ''.join(data)
+	
+    # Split by space
+    ' '.join(data)
     
