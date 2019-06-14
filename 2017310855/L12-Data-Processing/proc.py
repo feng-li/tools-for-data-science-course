@@ -13,7 +13,7 @@ for line in input:
     # Process
     date = field[2]
     max = float(field[5])
-    min = float(field[4])
+    min = float(field[6])
     range = max - min
     mean = (max + min)/2
 
