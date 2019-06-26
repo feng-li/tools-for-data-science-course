@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 import math
-import numpy as np
+wwwwwrimport numpy as np
 from scipy import linalg
 
 a = np.array([[0,1,2],[1,1,4],[2,-1,0]])
@@ -96,3 +96,4 @@ math.isclose(np.prod(ze),linalg.det(a),rel_tol=1e-9)
 #20.矩阵a与特征向量的乘积等于其对应特征值与其乘积
 a.dot(mat[:,0])
 ze[0]*mat[:,0]
+

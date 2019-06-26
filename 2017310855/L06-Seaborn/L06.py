@@ -1,6 +1,9 @@
-# 导入sns包
+#! usr/bin/env python3
+
 import seaborn as sns
-# 调用泰坦尼克数据集
+
+# Transfer
 data = sns.load_dataset("titanic")
-# logit回归
+
+# Logit regress
 sns.lmplot(x = "age", y = "survived", hue = "sex", col = "pclass", data = data, logistic = True)
