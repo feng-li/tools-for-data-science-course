@@ -1,0 +1,31 @@
+Def  equart(A,B,C):
+         “”
+          Judge if a quadratic equation like “Ax^2+Bx+C=0”
+          If  A==0, print('The equation is not  “一元二次方程”.')
+            elif    “”
+                  import 
+                      for p in A
+                          for q in B
+                              for r in C 
+                                     print(if p==A,q==B,r==C) 
+                               delta= q^2-4*p*r
+                                t=-q/2*p  
+                               if delta<0
+                                   print('The equation has no root.')
+                               elif delta==0
+                                      print('The equation has one root,x1==x2=t')
+                               else 
+                                  x1=t+delta/2*p
+                                  X2=t-delta/2*p
+                         print('The equation has one roo,x1=t+delta/2*p, X2=t-delta/2*p,')
+
+
+
+import random
+n = 10
+p = np.array([random.randint(1,100) for i in range(n)])
+q = np.array([random.randint(1,100) for i in range(n)])
+r = np.array([random.randint(1,100) for i in range(n)])
+for i in range(100):
+rt(p[i],q[i],r[i])
+
