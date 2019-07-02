@@ -1,0 +1,19 @@
+cd 00lifeng
+
+#创建&查看
+hadoop fs -mkdir /00lifeng/2016310432
+hadoop fs -ls /00lifeng
+hadoop fs -ls /00lifeng/2016310432
+
+
+#拷贝&上传
+hadoop fs -get 600782.SH.CSV /00lifeng/2016310432/  
+hadoop fs -put 600782.SH.CSV /00lifeng/2016310432/  
+
+
+Hadoop fs -ls /00lifeng/lifeng/output/part*
+hadoop fs -cat /00lifeng/mujiachen/output/part*
+
+hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -input /00lifeng/2017310833/600863.SH.CSV -output /00lifeng/2017310833/out/ -mapper "/usr/bin/cat" -reducer "/bin/wc"
+
+
