@@ -1,0 +1,25 @@
+L01 linux
+
+cd tds2019
+
+mkdir 2016310432dxy
+
+ls - lh
+ls - lht
+ls - lht = ls - l -h -t -r
+
+drwxr-xr-x意思如下：
+第一位表示文件类型。d是目录文件，l是链接文件，-是普通文件，p是管道。
+后面的分三个三个来看，即 rwx 、r-x 、r-x。
+第一个： ?root ：r 是可读，w 是可写，x 是可执行，rwx 意思是可读可写可执行。
+第二个： ?一般用户（用户组）：r-x 是可读可执行不可写。
+第三个： ?其他用户，r-x 是可读可执行不可写。
+
+
+screen -DR 2016310432
+
+
+Ctrl t +c 新建一个
+Ctrl D 相当于把screen最小化 
+Ctrl d+0/1/2 切换
+Ctrl d +shift a（大写A）：重命名
