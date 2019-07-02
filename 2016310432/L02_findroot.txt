@@ -1,0 +1,28 @@
+import math
+
+def findroot(a,b,c):
+    if a==0
+        print('Wrong！')
+
+    elif a!= 0:
+        delta = b*b - 4*a*c
+
+        elif delta > 0:
+            x1 = (-b+math.sqrt(delta))/2*a
+            x2 =(-b-math.sqrt(delta))/2*a
+            print(The equation has two roots,x1 =", x1 , ",  x2 = " ,x2,sep='')
+
+        elif delta == 0:
+            x = -b/2*a
+            print(The equation has a only root,x =" ,x,sep='' )
+
+findroot(0,2,1)
+
+import random
+n = 10
+a = np.array([random.randint(1,100) for i in range(n)])
+b = np.array([random.randint(1,100) for i in range(n)])
+c = np.array([random.randint(1,100) for i in range(n)])
+
+for i in range(100):
+    findroot(a[i],b[i],c[i])
