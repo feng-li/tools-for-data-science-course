@@ -1,0 +1,215 @@
+新的putty
+47.92.169.139 
+用户名student
+密码waasipku
+cd 00lifeng
+mkdir 2017310819
+ls
+hadoop
+haddoop version
+echo $HADOOP_HOME #查看文件位置
+hadoop ls #出不来
+hadoop fs -ls
+hadoop fs -mkdir /00lifeng/zhangyunwen#创建文件夹
+hadoop fs -ls /00lifeng/ #查看文件
+hadoop fs -rm -r /00lifeng/zhangyunwen/#删掉文件夹
+cd #切换至根目录
+cd data#上证指数
+cd shanghai#上证指数
+emacs -Q 600782.SH.CSV#进入文件 ctrl x ctrl c 选择y 退出
+#防止乱码，选择编码方式，进入文件后，在进入的下部分点击输Alt x 
+revert buffer-with-coding-system
+选择编码方式gbk
+yes
+
+hadoop fs -put 600782.SH.CSV /00lifeng/zhangyunwen/  #上传
+hadoop fs -ls
+
+hadoop fs -get /00lifeng/zhangyunwen/600782.SH.CSV #取下来
+
+hadoop fs #查看fs支持哪些命令
+cat打印
+copy from local#类似push
+
+#如何数文件有多少行
+cat 600893.SH.CSV | wc #管道 把打印出的输出函数
+#mapreducer运行
+cd Workshop+00lifeng]$ 
+ Workshop+00lifeng]$ 
+echo $HADOOP_HOME
+hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-s
+hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -input /00lifeng/lifeng/600863.SH.CSV -output /00lifeng/lifeng/output/ -m
+#包含输入文件、输出文件
+运行前把原输出文件删除output
+hadoop fs -ls /00lifeng/lifeng/output/part*
+hadoop fs -cat /00lifeng/lifeng/output/part*
+
+#############333第二课
+#标准输出 R：print\cat\message   #python: print 打印在文件上
+#标准输入：通过管道传递到python程序
+touch line.py
+emacs -Q line.py
+#可执行程序chmod +x **.py
+cat **.py | ./line.py
+#打出15（行）
+[line.py的内容：
+import sys
+import io
+count = 0
+input_stream = io.TextIOWrapper(sys.stdin.butter. encoding='gbk')
+    for line in sys.stdin: #read input from stdin
+        count += 1
+    print(count)]
+    
+cat aa.txt | python line.py
+
+input /user/lifeng/aa.txt -output ./output -file "line.py" -mapper "/user/bin/cat" -reducer "python3 line.py" -numReduceTasks 1
+
+
+###################3作业牟家辰
+#! /usr/bin/sh
+
+# Login
+ssh student@47.92.169.139
+
+# Input password
+
+# Remove wc output
+hadoop fs -rm -r /00lifeng/mujiachen/output
+
+# View
+hadoop fs -ls /00lifeng/mujiachen
+
+# Switch work dic
+cd 00lifeng/mujiachen
+
+touch data_proc.py
+emacs -Q data_proc.py
+
+#! /usr/bin/env python3
+
+import sys
+import io
+
+input = io.TextIOWrapper(sys.stdin.buffer, encoding = 'gbk')
+
+for line in input:
+
+    # Split
+    field = line.split(',')
+
+    # Process
+    date = field[2]
+    max = float(field[5])
+    min = float(field[4])
+    range = max - min
+    mean = (max + min)/2
+
+    data = (date, max, min, range, mean)
+    print(data) 
+
+# Quit emacs
+ctrl + x
+ctrl + c
+
+# Save
+y
+
+# Grant authority
+chmod +x data_proc.py
+
+# View
+cat 600880.SH.CSV
+
+# Try
+cat 600880.SH.CSV | python3 data_proc.py
+
+# Map reduce
+hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -input /00lifeng/mujiachen/600880.SH.CSV -output /00lifeng/mujiachen/output -file "data_proc.py" -mapper "/usr/bin/cat" -reducer "python3 data_proc.py" -numReduceTasks 1
+
+# View
+hadoop fs -cat /00lifeng/mujiachen/output/* 
+
+#################3邓煊洁
+#! /usr/bin/env python3
+import sys
+import io
+s=0
+l=0
+input_stream=io.TextIOWrapper(sys.stdin.buffer, encoding='gbk')
+for line in input_stream:
+    linp=line.split(",")
+    s+=eval(inp[5])
+    l+=1
+mean=s/l
+print(mean)
+23 2017310901/L10_mapreduce_mean.sh
+@@ -0,0 +1,23 @@
+screen -DR 2017310901
+cd 00lifeng/dengxuanjie/
+touch mean.py
+emacs -Q mean.py
+----------------------
+#! /usr/bin/env python3
+import sys
+import io
+s=0
+l=0
+input_stream=io.TextIOWrapper(sys.stdin.buffer, encoding='gbk')
+for line in input_stream:
+	inp=line.split(",")
+	s+=eval(inp[5])
+	l+=1
+mean=s/l
+print(mean)
+----------------------
+chmod +x mean.py
+cat 600782.SH.CSV | mean.py
+hadoop jar /usr/lib/hadoop-current/share/hadoop/tools/lib/hadoop-streaming-2.7.2.jar -input /00lifeng/dengxuanjie/600782.SH.CSV -output /00lifeng/dengxuanjie/output5/ -file "mean.py" -mapper "/usr/bin/cat" -reducer "python3 mean.py" -numReduceTasks 5
+hadoop fs -cat /00lifeng/dengxuanjie/output5/part*
+exit 
+#####################33333第三课
+Hive基础 非交互操作
+从终端
+Hive -e “dfs -ls/;”
+Hive -f /path/to/file/xxx.hql
+终端启用hive
+hive
+dfs -ls /;
+跳出hive
+exit;
+列出数据库名称
+show databases;
+show databases like ‘d’;
+创建数据库
+create database if not exits mydb;
+create database if not exits mydb location ‘user/lifeng/00lifeng’;
+Show database
+删除数据库
+Drop database if exits mydb;
+Show database;
+使用数据库
+Use mydb;
+创建表
+Creat table if not exits mydb.employees (
+Name
+ String comment ‘employee name’,
+Salary
+Float comment ’employee salary’
+
+创建外部表，假设stocks.txt已经存在在/user/lifeng/data里面
+Creat external table if not exits stocks (
+symbol
+
+基本的统计操作
+Select avg(price_close) from stocks where symbol = ‘AAPL’
+
+
+pwd /home/lifeng/shanghai
+ls -htla README.md
+
+192.168.113.164
+Cufe
+Dashuju
+22
+
