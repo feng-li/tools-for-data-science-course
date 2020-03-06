@@ -9,5 +9,5 @@
     - Taught by Feng Li
 
 ***Good evening, Mr Li***
-***Good night,GeniusX***
+***Good night,Genius X***
 
