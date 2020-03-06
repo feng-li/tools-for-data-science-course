@@ -10,4 +10,4 @@
 
 > ## Vim tips
 > - **bold text**
-> - * Italic *
+> - *Italic*
