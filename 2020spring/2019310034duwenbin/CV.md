@@ -6,3 +6,5 @@ I will ask you if I have any difficulty in learning this course
 for the first time.  
 
 Thank you!Goodbye!
+
+I'm not good.I can't solve the problem.
