@@ -11,3 +11,8 @@ I *cant* catch the teacher.
 May be
 1.make a note
 2.watch the class video again.
+
+
+
+
+makkkkke a change!!!!
