@@ -3,5 +3,7 @@
 
 **Last name** : Wang
 
-I can be best reached via <zshenwang_cufe@outlook.com>.
+Student majoring in *Actuarial Science* at *School of Insurance, CUFE*
+
+I can be best reached via <zshenwang_cufe@outlook.com>
 
