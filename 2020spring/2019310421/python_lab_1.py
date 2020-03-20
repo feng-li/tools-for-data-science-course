@@ -9,7 +9,7 @@
      "data": {
       "text/plain": [
        "1.0"
-      ]
+       ]
      },
      "execution_count": 3,
      "metadata": {},
@@ -71,7 +71,7 @@
     {
      "data": {
       "text/plain": [
-       "array([[1, 2],\n",
+             "array([[1, 2],\n",
        "       [3, 4]])"
       ]
      },
