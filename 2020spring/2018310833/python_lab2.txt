@@ -1,0 +1,762 @@
+Python 3.7.7 (tags/v3.7.7:d7c567b08f, Mar 10 2020, 10:41:24) [MSC v.1900 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> with open("data/BABAnews.txt,mode = 'r') as myfile:
+	  
+SyntaxError: EOL while scanning string literal
+>>> with open("data/BABAnews.txt", mode = 'r') as myfile: 
+        print(myfile.read())
+
+        
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    with open("data/BABAnews.txt", mode = 'r') as myfile:
+FileNotFoundError: [Errno 2] No such file or directory: 'data/BABAnews.txt'
+>>> with open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BABAnews.txt", mode = 'r') as myfile: 
+        print(myfile.read())
+
+        
+Traceback (most recent call last):
+  File "<pyshell#4>", line 2, in <module>
+    print(myfile.read())
+UnicodeDecodeError: 'gbk' codec can't decode byte 0x8e in position 6: illegal multibyte sequence
+>>> with open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BABAnews.txt", mode = 'r',encoding = 'UTF-8') as myfile: 
+        print(myfile.read())
+
+    从2009年淘宝商城的促销活动，到2016年天猫商城全天交易额超越1207亿，“双十一”经过八年的升温，已经逐渐成长能够影响世界的中国电子商务行业年度盛事。在风光的“双十一”背后，技术保障团队又有什么样鲜为人知的故事呢？4月12日，阿里巴巴技术团队在京召开了分享会，独家揭秘“双十一”背后的“故事”，同时向大家推荐了题为《尽在双11——阿里巴巴技术演进与超越》的互联网丛书。
+    作为迄今为止，阿里巴巴集团唯一官方出品、全面阐述双 11 八年以来在技术和商业上演进和创新历程的书籍，《尽在双11——阿里巴巴技术演进与超越》由电子工业出版社博文视点与阿里巴巴联合出版。本书从五个方面全面精炼生动地进行剖析，揭秘世界奇迹双11背后的技术演进与创新，内容涵盖了双 11 背景下阿里技术架构八年来的演进，如何确保稳定性这条双 11 生命线的安全和可靠，技术和商业交织发展的历程，无线和互动的持续创新与突破，以及对商家的赋能和生态的促进与繁荣。
+    “1秒钟同时完成12万笔支付、单日交易额定格在1207亿元、每秒同时创建17.5万笔订单……”在这一串惊人的数字背后，蕴藏着技术团队鲜为人知的故事，对于他们来说，每年双11最紧张的就是午夜零点难以想象的流量。会议现场，双十一技术团部大队长陈琴、双十一稳定性负责人丁宇、认知计算实验室负责人袁泉分别从各自负责的业务板块，向大家细致解读了“双十一”背后，技术团队所付出的艰辛。三位负责人纷纷表示，他们分享的内容都包含在《尽在双11——阿里巴巴技术演进与超越》一书中，是双11八年成长经验与技术创新的总结，也是阿里成长中摸索出的方法和方向的汇聚，更是诸多技术同学与技术大神的倾囊分享。
+    阿里巴巴集团CEO张勇，对该书给予了高度的肯定。他认为，“《尽在双11——阿里巴巴技术演进与超越》以双11为着眼点，从技术的角度，展示了阿里巴巴的演进、变革与发展，系统地阐述了阿里巴巴重要阶段的技术进步历程。进无止境，我们希望将我们的经验分享给更多人，并希望与大家一起共同探索未来。”
+    阿里巴巴集团CTO张剑锋也力荐《尽在双11——阿里巴巴技术演进与超越》一书。他说，“《尽在双11——阿里巴巴技术演进与超越》是对“双11”技术演进客观、翔实的还原，迄今为止还没有类似的其他书。”（周靖杰）
+
+>>> myfile.closed
+True
+>>> myfile = open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BABAnews.txt", mode = 'r',encoding = 'UTF-8')
+>>> mefile.read()
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    mefile.read()
+NameError: name 'mefile' is not defined
+>>> myfile.read()
+'    从2009年淘宝商城的促销活动，到2016年天猫商城全天交易额超越1207亿，“双十一”经过八年的升温，已经逐渐成长能够影响世界的中国电子商务行业年度盛事。在风光的“双十一”背后，技术保障团队又有什么样鲜为人知的故事呢？4月12日，阿里巴巴技术团队在京召开了分享会，独家揭秘“双十一”背后的“故事”，同时向大家推荐了题为《尽在双11——阿里巴巴技术演进与超越》的互联网丛书。\n    作为迄今为止，阿里巴巴集团唯一官方出品、全面阐述双 11 八年以来在技术和商业上演进和创新历程的书籍，《尽在双11——阿里巴巴技术演进与超越》由电子工业出版社博文视点与阿里巴巴联合出版。本书从五个方面全面精炼生动地进行剖析，揭秘世界奇迹双11背后的技术演进与创新，内容涵盖了双 11 背景下阿里技术架构八年来的演进，如何确保稳定性这条双 11 生命线的安全和可靠，技术和商业交织发展的历程，无线和互动的持续创新与突破，以及对商家的赋能和生态的促进与繁荣。\n    “1秒钟同时完成12万笔支付、单日交易额定格在1207亿元、每秒同时创建17.5万笔订单……”在这一串惊人的数字背后，蕴藏着技术团队鲜为人知的故事，对于他们来说，每年双11最紧张的就是午夜零点难以想象的流量。会议现场，双十一技术团部大队长陈琴、双十一稳定性负责人丁宇、认知计算实验室负责人袁泉分别从各自负责的业务板块，向大家细致解读了“双十一”背后，技术团队所付出的艰辛。三位负责人纷纷表示，他们分享的内容都包含在《尽在双11——阿里巴巴技术演进与超越》一书中，是双11八年成长经验与技术创新的总结，也是阿里成长中摸索出的方法和方向的汇聚，更是诸多技术同学与技术大神的倾囊分享。\n    阿里巴巴集团CEO张勇，对该书给予了高度的肯定。他认为，“《尽在双11——阿里巴巴技术演进与超越》以双11为着眼点，从技术的角度，展示了阿里巴巴的演进、变革与发展，系统地阐述了阿里巴巴重要阶段的技术进步历程。进无止境，我们希望将我们的经验分享给更多人，并希望与大家一起共同探索未来。”\n    阿里巴巴集团CTO张剑锋也力荐《尽在双11——阿里巴巴技术演进与超越》一书。他说，“《尽在双11——阿里巴巴技术演进与超越》是对“双11”技术演进客观、翔实的还原，迄今为止还没有类似的其他书。”（周靖杰）\n'
+>>> myfile.close()
+>>> myfile = open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BABAnews.txt", mode = 'r',encoding = 'UTF-8')
+>>> myfile.readline()
+'    从2009年淘宝商城的促销活动，到2016年天猫商城全天交易额超越1207亿，“双十一”经过八年的升温，已经逐渐成长能够影响世界的中国电子商务行业年度盛事。在风光的“双十一”背后，技术保障团队又有什么样鲜为人知的故事呢？4月12日，阿里巴巴技术团队在京召开了分享会，独家揭秘“双十一”背后的“故事”，同时向大家推荐了题为《尽在双11——阿里巴巴技术演进与超越》的互联网丛书。\n'
+>>> myfile.readlines
+<built-in method readlines of _io.TextIOWrapper object at 0x0000021B861783C8>
+>>> myfile.readlines()
+['    作为迄今为止，阿里巴巴集团唯一官方出品、全面阐述双 11 八年以来在技术和商业上演进和创新历程的书籍，《尽在双11——阿里巴巴技术演进与超越》由电子工业出版社博文视点与阿里巴巴联合出版。本书从五个方面全面精炼生动地进行剖析，揭秘世界奇迹双11背后的技术演进与创新，内容涵盖了双 11 背景下阿里技术架构八年来的演进，如何确保稳定性这条双 11 生命线的安全和可靠，技术和商业交织发展的历程，无线和互动的持续创新与突破，以及对商家的赋能和生态的促进与繁荣。\n', '    “1秒钟同时完成12万笔支付、单日交易额定格在1207亿元、每秒同时创建17.5万笔订单……”在这一串惊人的数字背后，蕴藏着技术团队鲜为人知的故事，对于他们来说，每年双11最紧张的就是午夜零点难以想象的流量。会议现场，双十一技术团部大队长陈琴、双十一稳定性负责人丁宇、认知计算实验室负责人袁泉分别从各自负责的业务板块，向大家细致解读了“双十一”背后，技术团队所付出的艰辛。三位负责人纷纷表示，他们分享的内容都包含在《尽在双11——阿里巴巴技术演进与超越》一书中，是双11八年成长经验与技术创新的总结，也是阿里成长中摸索出的方法和方向的汇聚，更是诸多技术同学与技术大神的倾囊分享。\n', '    阿里巴巴集团CEO张勇，对该书给予了高度的肯定。他认为，“《尽在双11——阿里巴巴技术演进与超越》以双11为着眼点，从技术的角度，展示了阿里巴巴的演进、变革与发展，系统地阐述了阿里巴巴重要阶段的技术进步历程。进无止境，我们希望将我们的经验分享给更多人，并希望与大家一起共同探索未来。”\n', '    阿里巴巴集团CTO张剑锋也力荐《尽在双11——阿里巴巴技术演进与超越》一书。他说，“《尽在双11——阿里巴巴技术演进与超越》是对“双11”技术演进客观、翔实的还原，迄今为止还没有类似的其他书。”（周靖杰）\n']
+>>> with open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Titanic.csv', 'r') as myfile:
+    for line in myfile:
+        print(line, end ='')
+
+        
+ID,Class,Sex,Age,Survived,Freq
+1,1st,Male,Child,No,0
+2,2nd,Male,Child,No,0
+3,3rd,Male,Child,No,35
+4,Crew,Male,Child,No,0
+5,1st,Female,Child,No,0
+6,2nd,Female,Child,No,0
+7,3rd,Female,Child,No,17
+8,Crew,Female,Child,No,0
+9,1st,Male,Adult,No,118
+10,2nd,Male,Adult,No,154
+11,3rd,Male,Adult,No,387
+12,Crew,Male,Adult,No,670
+13,1st,Female,Adult,No,4
+14,2nd,Female,Adult,No,13
+15,3rd,Female,Adult,No,89
+16,Crew,Female,Adult,No,3
+17,1st,Male,Child,Yes,5
+18,2nd,Male,Child,Yes,11
+19,3rd,Male,Child,Yes,13
+20,Crew,Male,Child,Yes,0
+21,1st,Female,Child,Yes,1
+22,2nd,Female,Child,Yes,13
+23,3rd,Female,Child,Yes,14
+24,Crew,Female,Child,Yes,0
+25,1st,Male,Adult,Yes,57
+26,2nd,Male,Adult,Yes,14
+27,3rd,Male,Adult,Yes,75
+28,Crew,Male,Adult,Yes,192
+29,1st,Female,Adult,Yes,140
+30,2nd,Female,Adult,Yes,80
+31,3rd,Female,Adult,Yes,76
+32,Crew,Female,Adult,Yes,20
+>>> file = open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/testfile.txt', 'w')
+>>> file.write('hello world\n')
+12
+>>> file.write('and this is another line.')
+25
+>>> file.close()
+>>> tobuy = ['milk\n', 'butter\n', 'coffee beans\n', 'arugula\n']
+>>> file = open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/grocerylist.txt','w')
+>>> file.writelines(tobuy)
+>>> file.read()
+Traceback (most recent call last):
+  File "<pyshell#24>", line 1, in <module>
+    file.read()
+io.UnsupportedOperation: not readable
+>>> file.close()
+>>> myfile = open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BABAnews.txt", mode = 'r',encoding = 'utf-8')
+>>> 
+>>> myfile.read()
+'    从2009年淘宝商城的促销活动，到2016年天猫商城全天交易额超越1207亿，“双十一”经过八年的升温，已经逐渐成长能够影响世界的中国电子商务行业年度盛事。在风光的“双十一”背后，技术保障团队又有什么样鲜为人知的故事呢？4月12日，阿里巴巴技术团队在京召开了分享会，独家揭秘“双十一”背后的“故事”，同时向大家推荐了题为《尽在双11——阿里巴巴技术演进与超越》的互联网丛书。\n    作为迄今为止，阿里巴巴集团唯一官方出品、全面阐述双 11 八年以来在技术和商业上演进和创新历程的书籍，《尽在双11——阿里巴巴技术演进与超越》由电子工业出版社博文视点与阿里巴巴联合出版。本书从五个方面全面精炼生动地进行剖析，揭秘世界奇迹双11背后的技术演进与创新，内容涵盖了双 11 背景下阿里技术架构八年来的演进，如何确保稳定性这条双 11 生命线的安全和可靠，技术和商业交织发展的历程，无线和互动的持续创新与突破，以及对商家的赋能和生态的促进与繁荣。\n    “1秒钟同时完成12万笔支付、单日交易额定格在1207亿元、每秒同时创建17.5万笔订单……”在这一串惊人的数字背后，蕴藏着技术团队鲜为人知的故事，对于他们来说，每年双11最紧张的就是午夜零点难以想象的流量。会议现场，双十一技术团部大队长陈琴、双十一稳定性负责人丁宇、认知计算实验室负责人袁泉分别从各自负责的业务板块，向大家细致解读了“双十一”背后，技术团队所付出的艰辛。三位负责人纷纷表示，他们分享的内容都包含在《尽在双11——阿里巴巴技术演进与超越》一书中，是双11八年成长经验与技术创新的总结，也是阿里成长中摸索出的方法和方向的汇聚，更是诸多技术同学与技术大神的倾囊分享。\n    阿里巴巴集团CEO张勇，对该书给予了高度的肯定。他认为，“《尽在双11——阿里巴巴技术演进与超越》以双11为着眼点，从技术的角度，展示了阿里巴巴的演进、变革与发展，系统地阐述了阿里巴巴重要阶段的技术进步历程。进无止境，我们希望将我们的经验分享给更多人，并希望与大家一起共同探索未来。”\n    阿里巴巴集团CTO张剑锋也力荐《尽在双11——阿里巴巴技术演进与超越》一书。他说，“《尽在双11——阿里巴巴技术演进与超越》是对“双11”技术演进客观、翔实的还原，迄今为止还没有类似的其他书。”（周靖杰）\n'
+>>> myfile.close()
+>>> myfile = open("C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/新建文本文档.txt", mode = 'r',encoding = 'utf-8')
+>>> 
+>>> myfile.close()
+>>> pi
+Traceback (most recent call last):
+  File "<pyshell#33>", line 1, in <module>
+    pi
+NameError: name 'pi' is not defined
+>>> pi = 3.1415926
+>>> fout = open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/math.txt', 'w')
+>>> fout.write("Pi's value is")
+13
+>>> fout.write(pi)
+Traceback (most recent call last):
+  File "<pyshell#37>", line 1, in <module>
+    fout.write(pi)
+TypeError: write() argument must be str, not float
+>>> fout.write(str(pi))
+9
+>>> fout.close()
+>>> import numpy
+Traceback (most recent call last):
+  File "<pyshell#40>", line 1, in <module>
+    import numpy
+ModuleNotFoundError: No module named 'numpy'
+>>> import numpy as np
+Traceback (most recent call last):
+  File "<pyshell#41>", line 1, in <module>
+    import numpy as np
+ModuleNotFoundError: No module named 'numpy'
+>>> import numpy as np
+>>> data = np.loadtxt('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BJsales.txt',skiprows = 1,delimiter = '\t')
+>>> print(data)
+[[  1.    1.  200.1]
+ [  2.    2.  199.5]
+ [  3.    3.  199.4]
+ [  4.    4.  198.9]
+ [  5.    5.  199. ]
+ [  6.    6.  200.2]
+ [  7.    7.  198.6]
+ [  8.    8.  200. ]
+ [  9.    9.  200.3]
+ [ 10.   10.  201.2]
+ [ 11.   11.  201.6]
+ [ 12.   12.  201.5]
+ [ 13.   13.  201.5]
+ [ 14.   14.  203.5]
+ [ 15.   15.  204.9]
+ [ 16.   16.  207.1]
+ [ 17.   17.  210.5]
+ [ 18.   18.  210.5]
+ [ 19.   19.  209.8]
+ [ 20.   20.  208.8]
+ [ 21.   21.  209.5]
+ [ 22.   22.  213.2]
+ [ 23.   23.  213.7]
+ [ 24.   24.  215.1]
+ [ 25.   25.  218.7]
+ [ 26.   26.  219.8]
+ [ 27.   27.  220.5]
+ [ 28.   28.  223.8]
+ [ 29.   29.  222.8]
+ [ 30.   30.  223.8]
+ [ 31.   31.  221.7]
+ [ 32.   32.  222.3]
+ [ 33.   33.  220.8]
+ [ 34.   34.  219.4]
+ [ 35.   35.  220.1]
+ [ 36.   36.  220.6]
+ [ 37.   37.  218.9]
+ [ 38.   38.  217.8]
+ [ 39.   39.  217.7]
+ [ 40.   40.  215. ]]
+>>> import csv
+>>> with open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Titanic.csv') as csvfile:
+	titanicReader = csv.reader(csvfile)
+	for row in titanicReader:
+		print(' '.join(row))
+
+		
+ID Class Sex Age Survived Freq
+1 1st Male Child No 0
+2 2nd Male Child No 0
+3 3rd Male Child No 35
+4 Crew Male Child No 0
+5 1st Female Child No 0
+6 2nd Female Child No 0
+7 3rd Female Child No 17
+8 Crew Female Child No 0
+9 1st Male Adult No 118
+10 2nd Male Adult No 154
+11 3rd Male Adult No 387
+12 Crew Male Adult No 670
+13 1st Female Adult No 4
+14 2nd Female Adult No 13
+15 3rd Female Adult No 89
+16 Crew Female Adult No 3
+17 1st Male Child Yes 5
+18 2nd Male Child Yes 11
+19 3rd Male Child Yes 13
+20 Crew Male Child Yes 0
+21 1st Female Child Yes 1
+22 2nd Female Child Yes 13
+23 3rd Female Child Yes 14
+24 Crew Female Child Yes 0
+25 1st Male Adult Yes 57
+26 2nd Male Adult Yes 14
+27 3rd Male Adult Yes 75
+28 Crew Male Adult Yes 192
+29 1st Female Adult Yes 140
+30 2nd Female Adult Yes 80
+31 3rd Female Adult Yes 76
+32 Crew Female Adult Yes 20
+>>> import pandas as pd
+>>> titanicData = pd.read_csv('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Titanic.csv')
+>>> titanicData.head()
+   ID Class     Sex    Age Survived  Freq
+0   1   1st    Male  Child       No     0
+1   2   2nd    Male  Child       No     0
+2   3   3rd    Male  Child       No    35
+3   4  Crew    Male  Child       No     0
+4   5   1st  Female  Child       No     0
+>>> titanicData = pd.read_table('data/Titanic.csv', sep=',')
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    titanicData = pd.read_table('data/Titanic.csv', sep=',')
+  File "D:\python\lib\site-packages\pandas\io\parsers.py", line 676, in parser_f
+    return _read(filepath_or_buffer, kwds)
+  File "D:\python\lib\site-packages\pandas\io\parsers.py", line 448, in _read
+    parser = TextFileReader(fp_or_buf, **kwds)
+  File "D:\python\lib\site-packages\pandas\io\parsers.py", line 880, in __init__
+    self._make_engine(self.engine)
+  File "D:\python\lib\site-packages\pandas\io\parsers.py", line 1114, in _make_engine
+    self._engine = CParserWrapper(self.f, **self.options)
+  File "D:\python\lib\site-packages\pandas\io\parsers.py", line 1891, in __init__
+    self._reader = parsers.TextReader(src, **kwds)
+  File "pandas\_libs\parsers.pyx", line 374, in pandas._libs.parsers.TextReader.__cinit__
+  File "pandas\_libs\parsers.pyx", line 674, in pandas._libs.parsers.TextReader._setup_parser_source
+FileNotFoundError: [Errno 2] File data/Titanic.csv does not exist: 'data/Titanic.csv'
+>>> titanicData = pd.read_table('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Titanic.csv', sep=',')
+>>> titanicData.head()
+   ID Class     Sex    Age Survived  Freq
+0   1   1st    Male  Child       No     0
+1   2   2nd    Male  Child       No     0
+2   3   3rd    Male  Child       No    35
+3   4  Crew    Male  Child       No     0
+4   5   1st  Female  Child       No     0
+>>> sales = pd.read_csv('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BJsales.csv', header = None)
+>>> sales.head()
+   0  1      2
+0  1  1  200.1
+1  2  2  199.5
+2  3  3  199.4
+3  4  4  198.9
+4  5  5  199.0
+>>> sales = pd.read_csv('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/BJsales.csv', names=['ID', 'Time', 'Value'])
+>>> sales.head()
+   ID  Time  Value
+0   1     1  200.1
+1   2     2  199.5
+2   3     3  199.4
+3   4     4  198.9
+4   5     5  199.0
+>>> sales.to_csv('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/sales.csv', index = False)
+>>> file = 'C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/example.xlsx'
+>>> myfile = pd.ExcelFile(file)
+Traceback (most recent call last):
+  File "<pyshell#63>", line 1, in <module>
+    myfile = pd.ExcelFile(file)
+  File "D:\python\lib\site-packages\pandas\io\excel\_base.py", line 824, in __init__
+    self._reader = self._engines[engine](self._io)
+  File "D:\python\lib\site-packages\pandas\io\excel\_xlrd.py", line 20, in __init__
+    import_optional_dependency("xlrd", extra=err_msg)
+  File "D:\python\lib\site-packages\pandas\compat\_optional.py", line 92, in import_optional_dependency
+    raise ImportError(msg) from None
+ImportError: Missing optional dependency 'xlrd'. Install xlrd >= 1.0.0 for Excel support Use pip or conda to install xlrd.
+>>> myfile = pd.ExcelFile(file)
+>>> print(myfile.sheet_names)
+['HairEyeColor', 'Nile']
+>>> dataframe = myfile.parse('HairEyeColor')
+>>> dataframe.head()
+   ID   Hair    Eye   Sex  Freq
+0   1  Black  Brown  Male    32
+1   2  Brown  Brown  Male    53
+2   3    Red  Brown  Male    10
+3   4  Blond  Brown  Male     3
+4   5  Black   Blue  Male    11
+>>> pdfFileObj = open('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Li2011Wiley.pdf', 'rb')
+>>> pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+Traceback (most recent call last):
+  File "<pyshell#69>", line 1, in <module>
+    pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+NameError: name 'PyPDF2' is not defined
+>>> import PyPDF2
+>>> pdfReader = PyPDF2.PdfFileReader(pdfFileObj)
+>>> pdfReader.numPages
+1
+>>> pageObj = pdfReader.getPage(0)
+>>> print(pageObj.extractText())
+MODELINGCONDITIONALDENSITIESUSINGFINITESMOOTH
+MIXTURES
+FENGLI,MATTIASVILLANI,ANDROBERTKOHN
+SverigesRiksbankWorkingPaperSeriesNo.245
+August2010
+Abstract.
+Smoothmixtures,i.e.mixturemodelswithcovariate-depen
+dentmixingweights,
+areveryusefulexiblemodelsforconditionaldensities.P
+reviousworkshowsthatusingtoo
+simplemixturecomponentsformodelingheteroscedastican
+d/orheavytaileddatacangive
+apoort,evenwithalargenumberofcomponents.Thispapere
+xploreshowwellasmooth
+mixtureofsymmetriccomponentscancaptureskeweddata.Si
+mulationsandapplicationson
+realdatashowthatincludingcovariate-dependentskewnes
+sinthecomponentscanleadto
+substantiallyimprovedperformanceonskeweddata,oftenu
+singamuchsmallernumberof
+components.Furthermore,variableselectioniseectivei
+nremovingunnecessarycovariatesin
+theskewness,whichmeansthatthereislittlelossinallowi
+ngforskewnessinthecomponents
+whenthedataareactuallysymmetric.Wealsointroducesmoo
+thmixturesofgammaand
+log-normalcomponentstomodelpositively-valuedrespons
+evariables.
+Keywords
+:Bayesianinference,MarkovchainMonteCarlo,MixtureofE
+xperts,Variable
+selection
+Li:DepartmentofStatistics,StockholmUniversity,SE-10
+691Stockholm,Sweden.Villani:Research
+Division,SverigesRiksbankandDepartmentofStatistics,
+StockholmUniversity.Kohn:AustralianSchool
+ofBusiness,UniversityofNewSouthWales,UNSW,Sydney205
+2,Australia.Theviewsexpressedinthis
+paperaresolelytheresponsibilityoftheauthorsandshoul
+dnotbeinterpretedasreectingtheviewsofthe
+ExecutiveBoardofSverigesRiksbank.
+1
+
+>>> pdfFileObj.close()
+>>> import docx
+Traceback (most recent call last):
+  File "<pyshell#76>", line 1, in <module>
+    import docx
+ModuleNotFoundError: No module named 'docx'
+>>> import sqlite3
+
+>>> import docx
+
+Traceback (most recent call last):
+  File "<pyshell#78>", line 1, in <module>
+    import docx
+  File "D:\python\lib\site-packages\docx.py", line 30, in <module>
+    from exceptions import PendingDeprecationWarning
+ModuleNotFoundError: No module named 'exceptions'
+>>> import docx
+Traceback (most recent call last):
+  File "<pyshell#79>", line 1, in <module>
+    import docx
+  File "D:\python\lib\site-packages\docx.py", line 30, in <module>
+    from exceptions import PendingDeprecationWarning
+ModuleNotFoundError: No module named 'exceptions'
+>>> import docx
+Traceback (most recent call last):
+  File "<pyshell#80>", line 1, in <module>
+    import docx
+  File "D:\python\lib\site-packages\docx.py", line 30, in <module>
+    from exceptions import PendingDeprecationWarning
+ModuleNotFoundError: No module named 'exceptions'
+>>> import docx
+>>> doc = docx.Document('C:/Users/Jellysillyfish/Desktop/ISTIC/数据科学工具/课件/data/Li2011Wiley.docx')
+>>> print(len(doc.paragraphs))
+6
+>>> print(doc.paragraphs[0].text)
+MODELING CONDITIONAL DENSITIES USING FINITE SMOOTH MIXTURES
+>>> import requests
+>>> url = 'https://sp0.baidu.com/8aQDcjqpAAV3otqbppnN2DJv/api.php?resource_id=6899&query=失信执行人名单&iname=中国银行'
+>>> resp = requests.get(url)
+>>> import json
+>>> data = json.loads(resp.text, encoding='gb18030')
+Traceback (most recent call last):
+  File "<pyshell#89>", line 1, in <module>
+    data = json.loads(resp.text, encoding='gb18030')
+  File "D:\python\lib\json\__init__.py", line 348, in loads
+    return _default_decoder.decode(s)
+  File "D:\python\lib\json\decoder.py", line 337, in decode
+    obj, end = self.raw_decode(s, idx=_w(s, 0).end())
+  File "D:\python\lib\json\decoder.py", line 355, in raw_decode
+    raise JSONDecodeError("Expecting value", s, err.value) from None
+json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+>>> import sqlite3
+>>> connection = sqlite3.connect("survey.db")
+>>> cursor = connection.cursor()
+>>> cursor.execute("SELECT Site.lat, Site.long FROM Site;")
+Traceback (most recent call last):
+  File "<pyshell#93>", line 1, in <module>
+    cursor.execute("SELECT Site.lat, Site.long FROM Site;")
+sqlite3.OperationalError: no such table: Site
+>>> cursor.execute("SELECT Site.lat, Site.long FROM Site;")
+Traceback (most recent call last):
+  File "<pyshell#94>", line 1, in <module>
+    cursor.execute("SELECT Site.lat, Site.long FROM Site;")
+sqlite3.OperationalError: no such table: Site
+>>> import numpy as np
+>>> from scipy import linalg
+>>> A = np.array([1,2],[3,4])
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    A = np.array([1,2],[3,4])
+TypeError: data type not understood
+>>> A = np.array([[1,2],[3,4]])
+>>> A
+array([[1, 2],
+       [3, 4]])
+>>> linalg.inv(A)
+array([[-2. ,  1. ],
+       [ 1.5, -0.5]])
+>>> b = np.array([[5,6]])
+>>> b
+array([[5, 6]])
+>>> b.T
+array([[5],
+       [6]])
+>>> A*b
+array([[ 5, 12],
+       [15, 24]])
+>>> A.dot(b.T)
+array([[17],
+       [39]])
+>>> b = np.array([5,6])
+>>> b
+array([5, 6])
+>>> b.T
+array([5, 6])
+>>> A.dot(b)
+array([17, 39])
+>>> linalg/inv(A).dot(b)
+Traceback (most recent call last):
+  File "<pyshell#15>", line 1, in <module>
+    linalg/inv(A).dot(b)
+NameError: name 'inv' is not defined
+>>> linalg.inv(A).dot(b)
+array([-4. ,  4.5])
+>>> A = np.array([[1,2],[3,4]])
+>>> A
+array([[1, 2],
+       [3, 4]])
+>>> b = np.array([[5],[6])
+	     
+SyntaxError: invalid syntax
+>>> b = np.array([[5],[6]])
+>>> b
+array([[5],
+       [6]])
+>>> linalg.inv(A).dot(b)
+array([[-4. ],
+       [ 4.5]])
+>>> A.dot(linalg.inv(A).dot(b))-b
+array([[0.],
+       [0.]])
+>>> np.linalg.solve(A,b)
+array([[-4. ],
+       [ 4.5]])
+>>> linalg.det(A)
+-2.0
+>>> import matplotlib.pyplot as plt
+Traceback (most recent call last):
+  File "<pyshell#26>", line 1, in <module>
+    import matplotlib.pyplot as plt
+ModuleNotFoundError: No module named 'matplotlib'
+>>> import matplotlib.pyplot as plt
+>>> c1,c2 = 5.0,2.0
+>>> i = np.r_[1:11]
+>>> xi = 0.1 * i
+>>> yi = c1* np.exp(-xi) + c2* xi
+>>> zi = yi + 0.05 * np.max(yi) * np.random.randn(len(yi))
+>>> A = np.c_[np.exp(-xi)[:, np.newaxis], xi[:, np.newaxis]]
+c, resid, rank, sigma = linalg.lstsq(A, zi)
+SyntaxError: multiple statements found while compiling a single statement
+>>> A = np.c_[np.exp(-xi)[:, np.newaxis], xi[:, np.newaxis]]
+>>> c, resid, rank, sigma = linalg.lstsq(A, zi)
+>>> xi2 = np.r_[0.1:1.0:100j]
+>>> yi2 = c[0]*np.exp(-xi2) + c[1]*xi2
+>>> plt.plot(xi,zi,'x',xi2,yi2)
+plt.axis([0,1.1,3.0,5.5])
+plt.xlabel('$x_i$')
+plt.title('Data fitting with linalg.lstsq')
+plt.show()
+SyntaxError: multiple statements found while compiling a single statement
+>>> plt.plot(xi,zi,'x',xi2,yi2)
+[<matplotlib.lines.Line2D object at 0x000002109FF09AC8>, <matplotlib.lines.Line2D object at 0x00000210A2021E88>]
+>>> plt.axis([0,1.1,3.0,5.5])
+(0.0, 1.1, 3.0, 5.5)
+>>> plt.xlabel('$x_i$')
+p
+SyntaxError: multiple statements found while compiling a single statement
+>>> plt.xlabel('$x_i$')
+Text(0.5, 0, '$x_i$')
+>>> plt.title('Data fitting with linalg.lstsq')
+Text(0.5, 1.0, 'Data fitting with linalg.lstsq')
+>>> plt.show()
+>>> la,v = linalg.eig(A)
+Traceback (most recent call last):
+  File "<pyshell#45>", line 1, in <module>
+    la,v = linalg.eig(A)
+  File "D:\python\lib\site-packages\scipy\linalg\decomp.py", line 216, in eig
+    raise ValueError('expected square matrix')
+ValueError: expected square matrix
+>>> A = np.array([[1,2],[3,4]])
+>>> la,v = linalg.eig(A)
+>>> l1,l2 = la
+>>> print(l1, l2)
+(-0.3722813232690143+0j) (5.372281323269014+0j)
+>>> print(v[:,0])
+[-0.82456484  0.56576746]
+>>> print(v[:,1])
+[-0.41597356 -0.90937671]
+>>> print(np.sum(abs(v**2),axis=0))
+[1. 1.]
+>>> v1 = np.array(v[:,0]).T
+>>> print(linalg.norm(A.dot(v1)-l1*v1))
+5.551115123125783e-17
+>>> A = np.array([[1,2,3],[4,5,6]])
+>>> M,N = A.shape
+>>> U,s,Vh = linalg.svd(A)
+>>> Sig = linalg.diagsvd(s,M,N)
+>>> U, Vh = U, Vh
+>>> U
+array([[-0.3863177 , -0.92236578],
+       [-0.92236578,  0.3863177 ]])
+>>> Sig
+array([[9.508032  , 0.        , 0.        ],
+       [0.        , 0.77286964, 0.        ]])
+>>> Vh
+array([[-0.42866713, -0.56630692, -0.7039467 ],
+       [ 0.80596391,  0.11238241, -0.58119908],
+       [ 0.40824829, -0.81649658,  0.40824829]])
+>>> U.dot(Sig.dot(Vh))
+array([[1., 2., 3.],
+       [4., 5., 6.]])
+>>> from scipy.stats import norm
+>>> r = norm.rvs(loc=0, scale=1, size=1000)
+>>> mean, var, skew, kurt = norm.stats(moments='mvsk')
+>>> from scipy import stats
+>>> x = np.random.random(10)
+>>> y = np.random.random(10)
+>>> slope, intercept, r_value, p_value, std_err = stats.linregress(x,y)
+>>> print({'slope':slope,'intercept':intercept})
+{'slope': -0.2558277840914407, 'intercept': 0.6879055389569085}
+>>> print({'p_value':p_value,'r-squared':round(r_value**2,2)})
+{'p_value': 0.3426264444880313, 'r-squared': 0.11}
+>>> from scipy.optimize import minimize
+
+>>> def rosen(x):
+	return sum(100.0*(x[1:]-x[:-1]**2.0)**2.0 + (1-x[:-1])**2.0)
+
+>>> x0 = np.array([1.3, 0.7, 0.8, 1.9, 1.2])
+>>> res = minimize(rosen, x0, method='nelder-mead',
+               options={'xtol': 1e-8, 'disp': True})
+Optimization terminated successfully.
+         Current function value: 0.000000
+         Iterations: 339
+         Function evaluations: 571
+>>> print(res.x)
+[1. 1. 1. 1. 1.]
+>>> import statsmodels.api as sm
+Traceback (most recent call last):
+  File "<pyshell#80>", line 1, in <module>
+    import statsmodels.api as sm
+ModuleNotFoundError: No module named 'statsmodels'
+>>> import statsmodels.api as sm
+>>> import statsmodels.formula.api as smf
+>>> star98 = sm.datasets.star98.load_pandas().data
+>>> formula = 'SUCCESS ~ LOWINC + PERASIAN + PERBLACK + PERHISP + PCTCHRT + \
+           PCTYRRND + PERMINTE*AVYRSEXP*AVSALK + PERSPENK*PTRATIO*PCTAF'
+dta = star98[['NABOVE', 'NBELOW', 'LOWINC', 'PERASIAN', 'PERBLACK', 'PERHISP',
+              'PCTCHRT', 'PCTYRRND', 'PERMINTE', 'AVYRSEXP', 'AVSALK',
+              'PERSPENK', 'PTRATIO', 'PCTAF']].copy()
+SyntaxError: multiple statements found while compiling a single statement
+>>> formula = 'SUCCESS ~ LOWINC + PERASIAN + PERBLACK + PERHISP + PCTCHRT + \
+           PCTYRRND + PERMINTE*AVYRSEXP*AVSALK + PERSPENK*PTRATIO*PCTAF'
+>>> dta = star98[['NABOVE', 'NBELOW', 'LOWINC', 'PERASIAN', 'PERBLACK', 'PERHISP',
+              'PCTCHRT', 'PCTYRRND', 'PERMINTE', 'AVYRSEXP', 'AVSALK',
+              'PERSPENK', 'PTRATIO', 'PCTAF']].copy()
+>>> endog = dta['NABOVE'] / (dta['NABOVE'] + dta.pop('NBELOW'))
+>>> del dta['NABOVE']
+>>> dta['SUCCESS'] = endog
+>>> mod1 = smf.glm(formula=formula, data=dta, family=sm.families.Binomial()).fit()
+>>> mod1.summary()
+<class 'statsmodels.iolib.summary.Summary'>
+"""
+                 Generalized Linear Model Regression Results                  
+==============================================================================
+Dep. Variable:                SUCCESS   No. Observations:                  303
+Model:                            GLM   Df Residuals:                      282
+Model Family:                Binomial   Df Model:                           20
+Link Function:                  logit   Scale:                          1.0000
+Method:                          IRLS   Log-Likelihood:                -127.33
+Date:                Thu, 26 Mar 2020   Deviance:                       8.5477
+Time:                        22:00:39   Pearson chi2:                     8.48
+No. Iterations:                     4                                         
+Covariance Type:            nonrobust                                         
+============================================================================================
+                               coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------
+Intercept                    0.4037     25.036      0.016      0.987     -48.665      49.472
+LOWINC                      -0.0204      0.010     -1.982      0.048      -0.041      -0.000
+PERASIAN                     0.0159      0.017      0.910      0.363      -0.018       0.050
+PERBLACK                    -0.0198      0.020     -1.004      0.316      -0.058       0.019
+PERHISP                     -0.0096      0.010     -0.951      0.341      -0.029       0.010
+PCTCHRT                     -0.0022      0.022     -0.103      0.918      -0.045       0.040
+PCTYRRND                    -0.0022      0.006     -0.348      0.728      -0.014       0.010
+PERMINTE                     0.1068      0.787      0.136      0.892      -1.436       1.650
+AVYRSEXP                    -0.0411      1.176     -0.035      0.972      -2.346       2.264
+PERMINTE:AVYRSEXP           -0.0031      0.054     -0.057      0.954      -0.108       0.102
+AVSALK                       0.0131      0.295      0.044      0.965      -0.566       0.592
+PERMINTE:AVSALK             -0.0019      0.013     -0.145      0.885      -0.028       0.024
+AVYRSEXP:AVSALK              0.0008      0.020      0.038      0.970      -0.039       0.041
+PERMINTE:AVYRSEXP:AVSALK  5.978e-05      0.001      0.068      0.946      -0.002       0.002
+PERSPENK                    -0.3097      4.233     -0.073      0.942      -8.606       7.987
+PTRATIO                      0.0096      0.919      0.010      0.992      -1.792       1.811
+PERSPENK:PTRATIO             0.0066      0.206      0.032      0.974      -0.397       0.410
+PCTAF                       -0.0143      0.474     -0.030      0.976      -0.944       0.916
+PERSPENK:PCTAF               0.0105      0.098      0.107      0.915      -0.182       0.203
+PTRATIO:PCTAF               -0.0001      0.022     -0.005      0.996      -0.044       0.044
+PERSPENK:PTRATIO:PCTAF      -0.0002      0.005     -0.051      0.959      -0.010       0.009
+============================================================================================
+"""
+>>> from scipy import stats
+>>> import pandas as pd
+>>> import matplotlib.pyplot as plt
+>>> import statsmodels.api as sm
+>>> from statsmodels.graphics.api import qqplot
+>>> print(sm.datasets.sunspots.NOTE)
+::
+
+    Number of Observations - 309 (Annual 1700 - 2008)
+    Number of Variables - 1
+    Variable name definitions::
+
+        SUNACTIVITY - Number of sunspots for each year
+
+    The data file contains a 'YEAR' variable that is not returned by load.
+
+>>> dta = sm.datasets.sunspots.load_pandas().data
+>>> dta.index = pd.Index(sm.tsa.datetools.dates_from_range('1700', '2008'))
+>>> del dta["YEAR"]
+>>> dta.plot(figsize=(12,8))
+<matplotlib.axes._subplots.AxesSubplot object at 0x00000210A42D0FC8>
+>>> dta.plot(figsize=(12,8));
+<matplotlib.axes._subplots.AxesSubplot object at 0x00000210A62D3D08>
+>>> plt.show()
+>>> fig = plt.figure(figsize=(12,8))
+>>> ax1 = fig.add_subplot(211)
+>>> fig = sm.graphics.tsa.plot_acf(dta.values.squeeze(), lags=40, ax=ax1)
+>>> ax2 = fig.add_subplot(212)
+>>> fig = sm.graphics.tsa.plot_pacf(dta, lags=40, ax=ax2)
+
+>>> plt.show()
+>>> arma_mod20 = sm.tsa.ARMA(dta, (2,0)).fit(disp=False)
+
+Warning (from warnings module):
+  File "D:\python\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 162
+    % freq, ValueWarning)
+ValueWarning: No frequency information was provided, so inferred frequency A-DEC will be used.
+>>> 
+======================== RESTART: C:/Users/Jellysillyfish/Desktop/2.py ========================
+Traceback (most recent call last):
+  File "C:/Users/Jellysillyfish/Desktop/2.py", line 1, in <module>
+    arma_mod20 = sm.tsa.ARMA(dta, (2,0)).fit(disp=False)
+NameError: name 'sm' is not defined
+>>> 
+======================== RESTART: C:/Users/Jellysillyfish/Desktop/2.py ========================
+::
+
+    Number of Observations - 309 (Annual 1700 - 2008)
+    Number of Variables - 1
+    Variable name definitions::
+
+        SUNACTIVITY - Number of sunspots for each year
+
+    The data file contains a 'YEAR' variable that is not returned by load.
+
+
+Warning (from warnings module):
+  File "D:\python\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 162
+    % freq, ValueWarning)
+ValueWarning: No frequency information was provided, so inferred frequency A-DEC will be used.
+const                49.659748
+ar.L1.SUNACTIVITY     1.390656
+ar.L2.SUNACTIVITY    -0.688571
+dtype: float64
+>>> arma_mod20 = sm.tsa.ARMA(dta, (2,0)).fit(disp=False)
+
+Warning (from warnings module):
+  File "D:\python\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 162
+    % freq, ValueWarning)
+ValueWarning: No frequency information was provided, so inferred frequency A-DEC will be used.
+>>> print(arma_mod20.params)
+const                49.659748
+ar.L1.SUNACTIVITY     1.390656
+ar.L2.SUNACTIVITY    -0.688571
+dtype: float64
+>>> arma_mod30 = sm.tsa.ARMA(dta, (3,0)).fit(disp=False)
+
+
+Warning (from warnings module):
+  File "D:\python\lib\site-packages\statsmodels\tsa\base\tsa_model.py", line 162
+    % freq, ValueWarning)
+ValueWarning: No frequency information was provided, so inferred frequency A-DEC will be used.
+>>> resid = arma_mod30.resid
+>>> stats.normaltest(resid)
+NormaltestResult(statistic=49.84501940098131, pvalue=1.5006919810670537e-11)
+>>> fig = plt.figure(figsize=(12,8))
+>>> ax = fig.add_subplot(111)
+>>> fig = qqplot(resid, line='q', ax=ax, fit=True)
+>>> plt.show()
+>>> predict_sunspots = arma_mod30.predict('1990', '2012', dynamic=True)
+>>> print(predict_sunspots)
+1990-12-31    167.047416
+1991-12-31    140.993000
+1992-12-31     94.859113
+1993-12-31     46.860902
+1994-12-31     11.242589
+1995-12-31     -4.721287
+1996-12-31     -1.166905
+1997-12-31     16.185697
+1998-12-31     39.021886
+1999-12-31     59.449873
+2000-12-31     72.170141
+2001-12-31     75.376781
+2002-12-31     70.436455
+2003-12-31     60.731583
+2004-12-31     50.201794
+2005-12-31     42.076025
+2006-12-31     38.114287
+2007-12-31     38.454644
+2008-12-31     41.963817
+2009-12-31     46.869287
+2010-12-31     51.423260
+2011-12-31     54.399716
+2012-12-31     55.321687
+Freq: A-DEC, dtype: float64
+>>> fig, ax = plt.subplots(figsize=(12, 8))
+>>> ax = dta.ix['1950':].plot(ax=ax)
+Traceback (most recent call last):
+  File "<pyshell#123>", line 1, in <module>
+    ax = dta.ix['1950':].plot(ax=ax)
+  File "D:\python\lib\site-packages\pandas\core\generic.py", line 5274, in __getattr__
+    return object.__getattribute__(self, name)
+AttributeError: 'DataFrame' object has no attribute 'ix'
+>>> fig = arma_mod30.plot_predict('1990', '2012', dynamic=True, ax=ax, plot_insample=False)
+>>> plt.show()
