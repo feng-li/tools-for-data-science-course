@@ -1,7 +1,7 @@
 # Tools for Data Science Course
 
 - Course hompage
-  https://feng.li/teaching/tds/
+   https://feng.li/teaching/tds/
 
 
     - Venue: 209M, Shahe Campus 
@@ -14,7 +14,9 @@
     - Venue: 105M, Shahe Campus
     - Time: Every Wednesday 19:20 pm
 
-=======
+
 ***Good evening, Mr Li***
+
 ***Good night, Students***
+
 
