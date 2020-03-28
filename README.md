@@ -1,7 +1,7 @@
 # Tools for Data Science Course
 
 - Course hompage
-  https://feng.li/teaching/tds/
+   https://feng.li/teaching/tds/
 
 
     - Venue: 209M, Shahe Campus 
