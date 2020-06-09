@@ -1,8 +1,8 @@
-本文件以数字货币为主题，分为数据获取和数据可视化两部分。
+本期末作业以数字货币为主题，分为数据获取和数据可视化两部分。
 
 一、数据获取：利用网页抓取功能从“火币网”上获取各种数字货币的信息
 
-程序代码：
+（1）程序代码：
 In [6]:
 import requests
 from bs4 import BeautifulSoup
@@ -24,15 +24,17 @@ for div in divs:
 coinData[name] = [name, price, volume]
 print (coinData)
 
-运行结果：
+（2）运行结果：
 输入数字货币的排名：1
 OrderedDict([(' 比特币-BTC', [' 比特币-BTC', '¥67,435.0500', '¥278,156万 '])])
 
+（3）结果分析：利用这个程序，可以通过输入数字货币的排名，实时获取各种数字货币的信息。例如输入“1”，可以知道交易量最大的数字货币是比特币。
+
 二、数据可视化：利用绘图功能绘制与数字货币有关的图像
 
-（1）折线图：一周内比特币价格变化趋势
+（一）折线图：一周内比特币价格变化趋势
 
-程序代码：
+（1）程序代码：
 In [10]:
 from matplotlib import pyplot as plt
 days = [3, 4, 5, 6, 7, 8, 9]
@@ -43,7 +45,7 @@ plt.plot(days, bitprice, color='green', marker='o', linestyle='solid')
 plt.title("The Price of Bitcoin from May 3rd to 9th")
 plt.show()
 
-运行结果：
+（2）运行结果：
 C:\Users\jiajia\anaconda3\lib\site-packages\matplotlib\figure.py:348: RuntimeWarning: divide by zero encountered in isfinite
   if not np.isfinite(figsize).all():
 C:\Users\jiajia\anaconda3\lib\site-packages\matplotlib\gridspec.py:136: RuntimeWarning: divide by zero encountered in subtract
@@ -326,9 +328,11 @@ C:\Users\jiajia\anaconda3\lib\site-packages\matplotlib\patches.py:745: RuntimeWa
   self._y1 = self._y0 + self._height
 （此处为图片）
 
-（2）相关性图：绘图展示一周内比特币和以太币价格的相关性
+（3）结果分析：根据Python绘出的折线图，我们可以看出比特币价格在5月3日到9日的这一周总体呈上升趋势，由此可以预测比特币价格可能继续上升。
 
-程序代码：
+（二）相关性图：绘图展示一周内比特币和以太币价格的相关性
+
+（1）程序代码：
 In [11]:
 import seaborn as sns
 import pandas as pd
@@ -338,7 +342,7 @@ ethprice = [208.16, 205.96, 203.65, 208.22, 206.06, 211.38, 213.32]
 prices1 = pd.DataFrame ([[8812.95,208.16],[8845.67,205.96], [8843.9,203.65], [9272.37,208.22], [9517.01,206.06], [9939.29,211.38], [9817.29,213.32]])
 sns.regplot(x=bitprice, y=ethprice, data=prices1);
 
-运行结果：
+（2）运行结果：
 C:\Users\jiajia\anaconda3\lib\site-packages\pandas\core\internals\managers.py:226: RuntimeWarning: divide by zero encountered in equal
   if (new_blknos == -1).any():
 C:\Users\jiajia\anaconda3\lib\site-packages\numpy\core\_methods.py:45: RuntimeWarning: divide by zero encountered in reduce
@@ -729,3 +733,5 @@ C:\Users\jiajia\anaconda3\lib\site-packages\matplotlib\patches.py:742: RuntimeWa
 C:\Users\jiajia\anaconda3\lib\site-packages\matplotlib\patches.py:745: RuntimeWarning: divide by zero encountered in double_scalars
   self._y1 = self._y0 + self._height
 （此处为图片）
+
+（3）结果分析：根据Python绘出的相关性图，我们可以看到图中的点并不分布在某条直线附近，由此我们可以知道比特币和以太币的价格在5月3日至9日不成线性相关。
