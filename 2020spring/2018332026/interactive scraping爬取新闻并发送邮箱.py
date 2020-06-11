@@ -88,6 +88,6 @@ def main_news():
 
 schedule.every().day.at('08:00').do(main_news)       # 每天上午08:00启动发送新闻任务
 
-while True:     # 通过死循环语句，确保程序始终处于运行状态
+while True:     # 通过无限循环语句，确保程序始终处于运行状态
     schedule.run_pending()
     time.sleep(1)
