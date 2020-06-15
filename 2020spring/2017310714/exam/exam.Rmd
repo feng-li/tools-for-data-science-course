@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ---
 title: "Exam"
 author: 
@@ -76,3 +77,83 @@ summary(fit)
 
 
 
+=======
+---
+title: "Exam"
+author: 
+date: "2020/6/5"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+require(tidyverse)
+require(fitdistrplus)
+require(readxl)
+catbond <- read_excel("C:/Users/Ziv/Desktop/wang/zhaiquan.xlsx") 
+taifeng <- read_excel("C:/Users/Ziv/Desktop/wang/taifeng.xlsx") 
+```
+
+```{r typhoon, error = FALSE}
+#frequency
+frq <- taifeng[,1]%>%
+   group_by(year)%>%
+   mutate(n=n())%>%
+   distinct()
+lambda <- mean(frq[,2]$n)
+a <- data.frame(frq[,2]$n, lambda)
+chisq.test(a)
+#severity
+gdp_d <- ts(distinct(taifeng[,4]))
+plot(gdp_d)
+loss <- sort(taifeng$aloss)
+a_loss <- loss[loss>0]
+g <- fitdistr(a_loss, densfun = "gamma")
+shape <- g$estimate[1]
+rate <- g$estimate[2]
+g_exp <- shape/rate
+plot(density(loss))
+#collateral loss
+set.seed(123)
+n <- rpois(100000, lambda)
+g_cls <- function(frq){ return(sum(rgamma(frq, shape, rate)))}
+clt_loss <- sort(sapply(n, g_cls))
+hist(clt_loss)
+plot(density(clt_loss))
+mean(clt_loss)
+sd(clt_loss)
+plot(ecdf(clt_loss))
+```
+
+```{r bond}
+lnsprd <- log(catbond$adj_sprd)
+lnp <- log(catbond$pfl)
+lns <- log(catbond$cel)
+fit <- lm(lnsprd~lnp+lns)
+summary(fit)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+>>>>>>> exam
