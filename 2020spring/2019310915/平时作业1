@@ -1,0 +1,47 @@
+#怎么取个好名字(修改列表中的元素)
+former_users=["CB","Czk","thy","zZb","hzc","adMIn","djy","zyL"]
+corrected_users=[]
+for user in former_users:
+    corrected_users.append(user.lower())
+print(corrected_users)    
+
+new_users=["czk","Zzb","zyd","yky","lby","Jm","Djy","Hzc"]
+
+for user in new_users :
+    if user.lower() in corrected_users:
+        print("Name : ("+user+" )has been used ,please change another name .thanks :)")
+    else:
+        print("Name:  ("+user+" )is avalible.")
+        
+
+
+
+#while循环初试
+key="\nPlease tell me the key,or i will fuck you"
+key+="\nEnter 'quit' to end "
+
+active=True
+while active:
+    k=str(input(key))
+    if k=='quit':
+        active=False
+    elif k=='the key':
+        print('You succeed! ')
+    else:
+        print('Fuck you!!! ')
+        
+    
+#电影票分为三档
+
+active=True
+while active:
+    a=input("How old are you ? ")
+    if a=='quit':
+        break
+    elif float(a)<=3:
+        print('Your ticket is freeee! ')
+    elif float(a)>12:
+        print('15 Dollars please .')
+    else:
+        print('10 Dollar please .')
+
