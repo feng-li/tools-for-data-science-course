@@ -1,0 +1,25 @@
+#1.计算斐波那契数列总和
+fibo=[1,1]
+
+for i in range(2,20):
+    nextnum=fibo[i-1]+fibo[i-2]
+    fibo.append(nextnum)
+
+sum_num=str(sum(fibo))
+
+print(fibo)
+print("总和为"+sum_num)
+
+#2.判断闰年
+year=int(input("please input your birthyear:"))
+
+if year%4==0:
+    if year%100!=0:
+        print("yes!")
+    elif year%400==0:
+        print("yes.")
+    else:
+        print("no.")
+else:
+    print("no")
+
