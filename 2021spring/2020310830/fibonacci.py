@@ -1,19 +1,16 @@
-a = 0
-b = 1
+def fib(n):
+    a = [0,1]
+    if n <= 2:
+        return a[:n]
+    for i in range(n-2):
+        c = a[-1] + a[-2]
+        a.append(c)
+
+    return a
 
 
-
-while b < 1000:
-    
-    a,b = b, a+b
-    
-    f = a * b
-
-print(b)
+n = 1000
 
 
-    
-    
-
-
+print(fib(n)
 
