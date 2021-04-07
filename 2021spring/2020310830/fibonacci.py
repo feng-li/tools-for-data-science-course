@@ -1,16 +1,22 @@
-def fib(n):
-    a = [0,1]
-    if n <= 2:
-        return a[:n]
-    for i in range(n-2):
-        c = a[-1] + a[-2]
-        a.append(c)
-
-    return a
-
-
-n = 1000
-
-
-print(fib(n)
-
+class Fibonacci(object):
+    '''斐波那契数列迭代器'''
+    
+    def __init__(self, n):
+        self.n = n
+        self.current = 0
+        self.a = 0
+        self.b = 1
+    def __next__(self):
+        if self.current < self.n:
+            self.a, self.b = self.b, self.a + self.b
+            self.current += 1
+            return self.a
+        else:
+            raise StopIteration
+   def __iter__(self):
+       return self
+if __name__ == '__main__':
+    fib = Fibonacci(1000)
+    
+    for num in fib:
+        print(num)
