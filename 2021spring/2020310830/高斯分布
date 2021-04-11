@@ -79,5 +79,5 @@ if __name__ == '__main__':
   ax.set_ylabel('Y')
   ax.set_zlabel('Z')
   plt.title('二元高斯分布，样本个数：%d' % d.shape[0], fontsize=15)
-  plt.tight_layout(0.1)
+  plt.tight_layout()
   plt.show()
