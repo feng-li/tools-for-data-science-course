@@ -1,0 +1,25 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+def demand_curve(x,a,c):
+    return 5*(x-a)**(2)+c
+
+def burget_line(m,h):
+    return (-2)*m+h
+
+x = np.arange(0,0.3,0.01)
+y = demand_curve(x,0.3,0.6)
+m = np.arange(0,0.5,0.01)
+n = burget_line(m,1)
+
+
+fig, ax = plt.subplots()
+ax.plot(x,y,linewidth=2)
+ax.plot(m,n,linewidth=2)
+ax.scatter(0.1,0.8,c='black',s=50)
+
+ax.set_title('')
+ax.set_xlabel('demand',fontsize=16)
+ax.set_ylabel('price',fontsize=16)
+
+plt.show()
