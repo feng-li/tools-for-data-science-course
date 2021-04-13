@@ -12,7 +12,8 @@ https://mp.weixin.qq.com/s?src=11&timestamp=1617880347&ver=2996&signature=gdKGAX
 import pandas as pd
 import matplotlib.pyplot as plt
 
-TSdata = pd.read_excel("E:\大学本科\大一上\房地产金融\数据\CEIC\实际利率.xlsx")
+#这里的路径不太会设置，具体就是仓库中实际利率的那个文件
+TSdata = pd.read_excel("..\\实际利率.xlsx")
 
 TSdata.head()
 fig = plt.figure()
