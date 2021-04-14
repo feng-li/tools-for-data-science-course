@@ -10,7 +10,7 @@ from sklearn.cluster import KMeans
 #from sklearn import datasets
 from sklearn.datasets import load_iris
 iris = load_iris()
-X = iris.data[:] 
+X = iris.data[:,2:] 
 #print(X)
 #绘制数据分布图
 plt.scatter(X[:, 0], X[:, 1], c = "red", marker='o', label='see')
