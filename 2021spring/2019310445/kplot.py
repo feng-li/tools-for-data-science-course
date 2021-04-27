@@ -32,7 +32,7 @@ def date_to_num(dates):
     return num_date
 
 class Stock:
-    def __init__(self, stknum\):\
+    def __init__(self, stknum):
         self.stknum=stknum
     
     #提示用户传入股票代码的信息
