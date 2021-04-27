@@ -32,18 +32,9 @@ def date_to_num(dates):
     return num_date
 
 class Stock:
-    def __init__(self, stknum,**kwargs):#关键字参数
+    def __init__(self, stknum\):\
         self.stknum=stknum
-        if 'start_date' in kwargs:
-            self.start_date=kwargs['start_date']
-        else:
-            self.start_date='2021-01-01'
-        
-        if 'end_date' in kwargs:
-            self.end_date=kwargs['end_date']
-        else:
-            self.end_date=''
-        
+    
     #提示用户传入股票代码的信息
     def get_num(self):
         stknum=input("Please enter the Stock Number you want to check(ending with .SH or .SZ):")
@@ -69,7 +60,7 @@ class Stock:
         pass
         
     #收集该股票的信息
-    def plot_stk(self,istrading:bool=False,tight:bool=True,**kwargs):#关键字参数，默认值参数，参数注释
+    def plot_stk(self,istrading:bool=False,tight:bool=False,**kwargs):#关键字参数，默认值参数，参数注释
         if 'start_date' in kwargs:
             self.start_date=kwargs['start_date']
         else:
