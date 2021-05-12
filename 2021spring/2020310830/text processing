@@ -37,19 +37,30 @@ America: In the face of our common dangers, in this winter of our hardship, let 
 Thank you. God bless you. And God bless the United States of America. (Applause.)
 '''
 
-# 因为文本是英文的，大小写会分成两种词语
-# 先转换为小写再执行
-spee# 利用字典进行处理
+
+
+
+
+#大写字母转换成小写字母
+exchange = article.lower();
+
+#生成单词列表
+list = exchange.split()
+
+#生成词频统计
 dic = {}
-for word in speech:
-    if word not in dic:
-        dic[word] = 1
-    else:
-        dic[word] = dic[word] + 1
-swd = sorted(dic.items(),key=operator.itemgetter(1),reverse=True)
-from nltk.corpus import stopwords
-stop_words = stopwords.words('English')
-for k,v in swd:
-    if k not in stop_words:
-        print (k,v)
-        
+for i in list:
+    count = list.count(i)
+    dic[i] = count
+
+#排除特定单词
+word = {'and','the','with','in','its','for','of','an','to'}
+for i in word:
+    del(dic[i])
+
+#排序
+dic1= sorted(dic.items(),key=lambda d:d[1],reverse= True)
+
+
+df = pd.DataFrame(pd.Series(dic1), columns=['word_frequency'])
+print(df)      
