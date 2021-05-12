@@ -1,0 +1,34 @@
+import csv
+import matplotlib.pyplot as plt
+
+filename = 'D:/pythonProject/titanic.csv'
+with open(filename) as f:
+    reader = csv.reader(f)
+    header_row = next(reader)
+
+    for index, column_header in enumerate(header_row):
+        if column_header == 'pclass':
+            pclass_row = index
+
+
+        pclasss = []
+        for row in reader:
+            pclass = int(row[pclass_row])
+            pclasss.append(pclass)
+            pclass_1 = pclasss.count(1)
+            pclass_2 = pclasss.count(2)
+            pclass_3 = pclasss.count(3)
+
+
+plt.rcParams['lines.linewidth'] = 2
+plt.rcParams['xtick.labelsize'] = 14
+plt.rcParams['ytick.labelsize'] = 14
+plt.rcParams['legend.fontsize'] = 14  #图例大小
+plt.rcParams['figure.figsize'] = [8,6]  #图的大小
+plt.rcParams['axes.labelsize'] = 16   #刻度大小
+
+label = ['pc1','pc2','pc3']
+x = [pclass_1,pclass_2,pclass_3]
+plt.pie(x,labels=label,autopct='%3.2f%%',textprops={'fontsize':18,'color':'k'})
+plt.axis('equal')#正圆
+plt.show()
