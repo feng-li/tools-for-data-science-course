@@ -1,0 +1,19 @@
+from sklearn.feature_extraction.text import CountVectorizer,TfidfTransformer
+corpus = [
+    'This is the first document.',
+    'This is the second second document.',
+    'And the third one.',
+    'Is this the first document?',
+]
+#CountVectorizer是通过fit_transform函数将文本中的词语转换为词频矩阵
+vectorizer = CountVectorizer()
+count = vectorizer.fit_transform(corpus)
+#get_feature_names()可看到所有文本的关键字
+print(vectorizer.get_feature_names())  
+#vocabulary_可看到所有文本的关键字和其位置
+print(vectorizer.vocabulary_)
+#toarray()可看到词频矩阵的结果
+print(count.toarray())
+transformer = TfidfTransformer()
+tfidf_matrix = transformer.fit_transform(count)
+print(tfidf_matrix.toarray())
