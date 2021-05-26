@@ -74,9 +74,3 @@ ax.set_xlabel('x label')  # Add an x-label to the axes.
 ax.set_ylabel('y label')  # Add a y-label to the axes.
 fig.suptitle('Categorical Plotting')
 plt.show()
-
-'''fig, ax = plt.subplots()  # Create a figure containing a single axes.
-ax.plot([1, 2, 3, 4], [1, 4, 2, 3])  # Plot some data on the axes.'''
-
-#print(sigmaxx(set,averag_x(set)))
-#print(averag_x(set),sigmaxx(set,averag_x(set)),averag_y(set),sigmaxy(set,averag_x(set),averag_y(set)))
