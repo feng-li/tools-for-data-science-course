@@ -41,3 +41,37 @@ wordcloud = WordCloud(
 plt.imshow(wordcloud, interpolation="bilinear")
 plt.axis("off")
 plt.show()
+import jieba
+
+#中文文本分词
+text= open("Test.txt",'r',encoding='UTF-8').read()
+
+#精确模式分词
+seg_list=jieba.cut(text,cut_all=True)
+print(u"[精确模式]: ", "/ ".join(seg_list))
+
+#获取关键词
+import jieba.analyse
+tags = jieba.analyse.extract_tags(text, topK=5)
+print (u"关键词:")
+print (" ".join(tags))
+
+#生成中文词云
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+# 结巴分词，生成字符串，wordcloud无法直接生成正确的中文词云
+cut_text = " ".join(jieba.cut(text))
+
+wordcloud = WordCloud(
+   #设置字体，不然会出现口字乱码，文字的路径是电脑的字体一般路径，可以换成别的
+   font_path="C:/Windows/Fonts/simfang.ttf",
+   #设置了背景，宽高
+   background_color="white",width=1000,height=880).generate(cut_text)
+
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+import jieba
+
+text= open("Test.txt",'r',encoding='UTF-8').read()
+
