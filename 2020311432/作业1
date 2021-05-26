@@ -1,0 +1,14 @@
+def fib_recur(n):
+    if n<=1:
+        return n
+    else:
+        return fib_recur(n-1)+fib_recur(n-2)
+ 
+def ex(c):
+    return int(c)
+ 
+X=input().strip().split()
+N=list(map(lambda a:int(a), X))[0]
+ 
+for i in range(1, N):
+    print(fib_recur(i),end=' ')
