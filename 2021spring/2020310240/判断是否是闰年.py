@@ -1,0 +1,5 @@
+birthyear = int(input('please enter your birthyear'))
+isleapyear = (birthyear%4==0)
+isleapyear = isleapyear and (birthyear%100!=0)
+isleapyear = isleapyear or (birthyear%400==0)
+print(isleapyear)

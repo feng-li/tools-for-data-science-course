@@ -1,0 +1,77 @@
+#统计《爱丽丝漫游仙境》文本词频
+
+#读取文件内容
+text=open("alice.txt").read()
+#按行读取文本，并返回一个list，每一行是list的一个item
+lines=open("alice.txt").readlines()
+
+import re
+#下面正则表达式的含义：切分符包括空白符号（空格，换行符\n，TAB符\t等看不见的符号）
+#英文逗号、句号、问号、感叹号、冒号
+pattern=r'[\s,\.?!:"]+'
+words=re.split(pattern,text)
+
+#上面切分得到的words是一个list，包括重复或不重复的单词。使用dict来统计和保存统计结果。
+result={}
+for w in words:
+    if w in result:
+        result[w] += 1
+    else:
+        result[w] = 1
+        
+print(result)
+
+#生成文本词云
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt  #绘制图像的模块
+import jieba                    #jieba分词
+
+
+f = open("alice.txt",'r',encoding='UTF-8').read()
+
+# 结巴分词，生成字符串，wordcloud无法直接生成正确的中文词云
+cut_text = " ".join(jieba.cut(f))
+
+wordcloud = WordCloud(
+   #设置字体，不然会出现口字乱码，文字的路径是电脑的字体一般路径，可以换成别的
+   font_path="C:/Windows/Fonts/simfang.ttf",
+   #设置了背景，宽高
+   background_color="white",width=1000,height=880).generate(cut_text)
+
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+import jieba
+
+#中文文本分词
+text= open("Test.txt",'r',encoding='UTF-8').read()
+
+#精确模式分词
+seg_list=jieba.cut(text,cut_all=True)
+print(u"[精确模式]: ", "/ ".join(seg_list))
+
+#获取关键词
+import jieba.analyse
+tags = jieba.analyse.extract_tags(text, topK=5)
+print (u"关键词:")
+print (" ".join(tags))
+
+#生成中文词云
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+# 结巴分词，生成字符串，wordcloud无法直接生成正确的中文词云
+cut_text = " ".join(jieba.cut(text))
+
+wordcloud = WordCloud(
+   #设置字体，不然会出现口字乱码，文字的路径是电脑的字体一般路径，可以换成别的
+   font_path="C:/Windows/Fonts/simfang.ttf",
+   #设置了背景，宽高
+   background_color="white",width=1000,height=880).generate(cut_text)
+
+plt.imshow(wordcloud, interpolation="bilinear")
+plt.axis("off")
+plt.show()
+import jieba
+
+text= open("Test.txt",'r',encoding='UTF-8').read()
+

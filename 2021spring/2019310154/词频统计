@@ -1,0 +1,9 @@
+import re,collections
+def Get_Words(file):
+    with open(file) as f:
+        words_box=[]
+        for line in f:
+            if re.match(r'[a-zA-Z0_9]*',line):
+                words_box.extend(line,strip().split())
+    return collections.Counter(words_box)
+print(get_nums('emma.txt')+get_nums('伊索寓言。txt'))

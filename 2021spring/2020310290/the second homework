@@ -1,0 +1,36 @@
+#导入相关的库
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+#打开数据集
+df=sns.load_dataset("titanic")
+df.shape
+df.info()
+
+#计算泰坦尼克号的获救人数和获救率
+total_survived=df.sex.value_counts()
+total_survived.index=total_survived.index.astype('str') #将index从数字转换为字符型“0”“1”
+_x=total_survived.index  #赋值
+_y=total_survived.values  #赋值
+
+#画图
+plt.figure(figsize=(10,5),dpi=80)  #plt.figure()定义画布
+ax1=plt.subplot(1,2,1) #创建一个1行2列的子图，并开始绘制第一个图
+
+plt.title('Survived Sex Count')
+plt.bar(_x[0],_y[0],color='blue',align='center',label='male survived') #bar绘制直方图
+plt.bar(_x[1],_y[1],color='red',align='center',label='female survived')
+label=['male survived','female survived']
+plt.xlabel('survived sex',fontsize=10) #添加x轴标签
+plt.ylabel('count',fontsize=10) #添加y轴标签
+plt.ylim(0,600)
+
+ax2=plt.subplot(1,2,2) #绘制第2个子图
+plt.title('Survived Sex Count')
+plt.pie(total_survived,labels=['male','female'],colors=['blue','red'], autopct='%3.0f%%', startangle=230)
+plt.axis('equal')
+
+
+plt.show()
