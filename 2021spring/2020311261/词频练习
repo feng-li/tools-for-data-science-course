@@ -1,0 +1,37 @@
+from collections import Counter
+from itertools import chain
+import numpy as np
+documents = ["Human machine interface for lab abc computer applications",
+             "A survey of user opinion of computer system response time",
+             "The EPS user interface management system",
+             "System and human system engineering testing of EPS",
+             "Relation of user perceived response time to error measurement",
+             "The generation of random binary unordered trees",
+             "The intersection graph of paths in trees", 
+             "Graph minors IV Widths of trees and well quasi ordering",
+             "Graph minors A survey"]
+def word_matrix(documents):    
+    '''计算词频矩阵'''    
+    # 所有字母转换位小写    
+    docs = [d.lower() for d in documents]    
+    # 分词    
+    docs = [d.split() for d in docs]    
+    # 获取所有词    
+    words = list(set(chain(*docs)))    
+    #print(words)    
+    # 词到ID的映射, 使得每个词有一个ID    
+    dictionary = dict(zip(words, range(len(words))))    
+    #print(dictionary)    
+    # 创建一个空的矩阵, 行数等于词数, 列数等于文档数    
+    matrix = np.zeros((len(words), len(docs)))    
+    # 逐个文档统计词频    
+    for col, d in enumerate(docs):  # col 表示矩阵第几列，d表示第几个文档。
+        # 统计词频        
+        count = Counter(d)#其实是个词典，词典元素为：{单词：次数}。        
+        for word in count:            
+            # 用word的id表示word在矩阵中的行数，该文档表示列数。            
+            id = dictionary[word]            # 把词频赋值给矩阵            
+            matrix[id, col] = count[word]    
+    return matrix, dictionary 
+matrix, dictionary = word_matrix(documents)
+print(matrix,'\n',dictionary)
