@@ -1,0 +1,4 @@
+years = int(input("Enter the year you want to ask."))                                                                   if ((years%4==0 and years%100!=0)or(years%400==0):
+    print(years,"闰年" )
+else:
+    print(years,"非闰年")

@@ -1,0 +1,17 @@
+import jieba
+
+filename = input(f"请输入文件路径：")
+with open(filename,'r',encoding='utf-8') as f:
+    content = f.read()
+    word_list = jieba.lcut(content)
+
+def count_word(word_name):
+    a = 0
+    for word in word_list:
+        if word == word_name:
+            a += 1
+        else:
+            a += 0
+        pass
+    print(a)
+count_word()
