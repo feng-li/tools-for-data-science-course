@@ -1,0 +1,17 @@
+import matplotlib.pyplot as plt
+import jieba
+pip install wordcloud -i https://pypi.tuna.tsinghua.edu.cn/simple
+from wordcloud import WordCloud
+text = open(r'.\jay.txt',"r").read()
+print(text)
+cut_text=jieba.cut(text)
+print(type(cut_text))
+print(next(cut_text))
+result=" ".join(cut_text)
+print(result)
+wc.generate(result)
+wc.to_file(r".\wordcloud.png")
+plt.figure("jay")
+plt.imshow(wc)
+plt.axis("off")
+plt.show()

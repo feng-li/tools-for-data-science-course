@@ -1,0 +1,26 @@
+字符匹配
+email="mjt666@tiremove_thisger.net"
+m=re.search("remove_this",email)
+print(m)
+email[:m.start()]+email[m.end():]
+
+email="我爱北京天安门"
+m=re.search("北京",email)
+print(m)
+email[:m.start()]+email[m.end():]
+
+字符串拆分
+re.split('\W+', 'Words, words, words.')#拆分所有以W开头的单词并将标点符号和空格转换成空格。
+re.split('(\W+)', 'Words, words, words.')#保留标点符号。
+re.split('\W+', 'Words, words, words.', 1)#只拆分一个。
+
+para="Matches whatever regular expression is inside the parentheses, and indicates the start and end of a group; the contents of a group can be retrieved after a match has been performed, and can be matched later in the string with the \number special sequence, described below. To match the literals '(' or ')', use ( or ), or enclose them inside a character class"
+from nltk.tokenize import sent_tokenize
+sent_tokenize(para)
+from nltk.tokenize import word_tokenize
+words=word_tokenize(para)
+from nltk.corpus import stopwords
+english_stops = set(stopwords.words('english'))
+print(english_stops)
+[word for word in words if word not in english_stops]
+
